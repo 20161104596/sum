@@ -10,15 +10,42 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var X: UITextField!
+    @IBOutlet weak var sum: UITextField!
     
-    @IBOutlet weak var Y: UITextField!
     
-    @IBOutlet weak var Z: UITextField!
-    
-    @IBAction func text(_ sender: Any) {
-        Z.text = "\(Int(X.text!)! + Int(Y.text!)!)"
+    @IBAction func n1(_ sender: Any) {
     }
+    
+    @IBAction func n2(_ sender: Any) {
+    }
+    
+    @IBAction func n3(_ sender: Any) {
+    }
+    
+    @IBAction func n4(_ sender: Any) {
+    }
+    
+    @IBAction func n5(_ sender: Any) {
+    }
+    
+    @IBAction func n6(_ sender: Any) {
+    }
+    
+    @IBAction func n7(_ sender: Any) {
+    }
+    
+    @IBAction func n8(_ sender: Any) {
+    }
+    
+    @IBAction func n9(_ sender: Any) {
+    }
+    
+    @IBAction func n0(_ sender: Any) {
+    }
+    
+    @IBAction func n(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
