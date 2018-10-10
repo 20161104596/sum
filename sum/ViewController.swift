@@ -9,10 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var result = ""
+    var number = 0
+    var re = 0
+    var add = 0
     
     @IBOutlet weak var sum: UITextField!
     
-    var re = 0
     @IBAction func n1(_ sender: Any) {
         if re == 1{
             sum.text = "1"
@@ -96,19 +99,62 @@ class ViewController: UIViewController {
     @IBAction func n(_ sender: Any) {
     }
     
+    @IBAction func add(_ sender: Any) {
+        if add == 1{
+            let a = Double(result)!
+            let b = Double(sum.text!)!
+            let c = a + b
+            result = String(c)
+            sum.text = ""
+            number = 1
+            re = 0
+        }
+        else{
+            if sum.text == ""{
+                sum.text = ""
+            }else{
+                add = 1
+                let x = Double(sum.text!)!
+                result = String(x)
+                sum.text = ""
+                number = 1
+                re = 0
+            }
+        }
+        
+        
+    }
+    
+    @IBAction func sub(_ sender: Any) {
+       
+    }
+    
+    @IBAction func mul(_ sender: Any) {
+        
+    }
+    
+    @IBAction func div(_ sender: Any) {
+        
+    }
+    
+    @IBAction func equal(_ sender: Any) {
+        let a = Double(result)!
+        let b = Double(sum.text!)!
+        if number == 1{
+            let c = a + b
+            sum.text = String(c)
+        }
+    }
+    
     @IBAction func clear(_ sender: Any) {
-        sum.text = " "
+        sum.text = ""
+        add = 0
     }
     
     @IBAction func point(_ sender: Any) {
-        if re == 1{
-            sum.text = "."
-        }else{
-            sum.text = sum.text! + "."
-        }
-        sum.text = sum.text! + "."
-        re = 1
+
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
