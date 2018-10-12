@@ -96,9 +96,6 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func n(_ sender: Any) {
-    }
-    
     @IBAction func add(_ sender: Any) {
         if add == 1{
             let a = Double(result)!
@@ -121,9 +118,8 @@ class ViewController: UIViewController {
                 re = 0
             }
         }
-        
-        
     }
+    
     
     @IBAction func sub(_ sender: Any) {
        
