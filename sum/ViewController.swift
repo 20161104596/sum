@@ -80,6 +80,9 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func dot(_ sender: Any) {
+        sum.text = sum.text! + "."
+    }
     @IBAction func n9(_ sender: Any) {
         if re == 1{
             sum.text = "9"
@@ -95,6 +98,7 @@ class ViewController: UIViewController {
             sum.text = sum.text! + "0"
         }
     }
+    
     
     @IBAction func add(_ sender: Any) {
         if add == 1{
@@ -122,15 +126,75 @@ class ViewController: UIViewController {
     
     
     @IBAction func sub(_ sender: Any) {
-       
+        if add == 1{
+            let a = Double(result)!
+            let b = Double(sum.text!)!
+            let c = a - b
+            result = String(c)
+            sum.text = ""
+            number = 2
+            re = 0
+        }
+        else{
+            if sum.text == ""{
+                sum.text = ""
+            }else{
+                add = 1
+                let x = Double(sum.text!)!
+                result = String(x)
+                sum.text = ""
+                number = 2
+                re = 0
+            }
+        }
     }
     
     @IBAction func mul(_ sender: Any) {
-        
+        if add == 1{
+            let a = Double(result)!
+            let b = Double(sum.text!)!
+            let c = a * b
+            result = String(c)
+            sum.text = ""
+            number = 3
+            re = 0
+        }
+        else{
+            if sum.text == ""{
+                sum.text = ""
+            }else{
+                add = 1
+                let x = Double(sum.text!)!
+                result = String(x)
+                sum.text = ""
+                number = 3
+                re = 0
+            }
+        }
     }
     
     @IBAction func div(_ sender: Any) {
-        
+        if add == 1{
+            let a = Double(result)!
+            let b = Double(sum.text!)!
+            let c = a / b
+            result = String(c)
+            sum.text = ""
+            number = 4
+            re = 0
+        }
+        else{
+            if sum.text == ""{
+                sum.text = ""
+            }else{
+                add = 1
+                let x = Double(sum.text!)!
+                result = String(x)
+                sum.text = ""
+                number = 4
+                re = 0
+            }
+        }
     }
     
     @IBAction func equal(_ sender: Any) {
@@ -140,6 +204,18 @@ class ViewController: UIViewController {
             let c = a + b
             sum.text = String(c)
         }
+        if number == 2{
+            let c = a - b
+            sum.text = String(c)
+        }
+        if number == 3{
+            let c = a * b
+            sum.text = String(c)
+        }
+        if number == 4{
+            let c = a / b
+            sum.text = String(c)
+        }
     }
     
     @IBAction func clear(_ sender: Any) {
@@ -147,9 +223,7 @@ class ViewController: UIViewController {
         add = 0
     }
     
-    @IBAction func point(_ sender: Any) {
 
-    }
     
     
     override func viewDidLoad() {
