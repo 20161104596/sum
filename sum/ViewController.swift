@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var number = 0
     var re = 0
     var add = 0
+    var judge = 0
     
     @IBOutlet weak var sum: UITextField!
     
@@ -80,9 +81,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func dot(_ sender: Any) {
-        sum.text = sum.text! + "."
-    }
+   
     @IBAction func n9(_ sender: Any) {
         if re == 1{
             sum.text = "9"
@@ -98,7 +97,15 @@ class ViewController: UIViewController {
             sum.text = sum.text! + "0"
         }
     }
-    
+    @IBAction func dot(_ sender: Any) {
+        if judge == 1{
+             sum.text = sum.text!
+        }
+        else{
+             sum.text = sum.text! + "."
+            judge = 1
+        }
+    }
     
     @IBAction func add(_ sender: Any) {
         if add == 1{
@@ -122,6 +129,7 @@ class ViewController: UIViewController {
                 re = 0
             }
         }
+        judge = 0
     }
     
     
@@ -147,6 +155,7 @@ class ViewController: UIViewController {
                 re = 0
             }
         }
+        judge = 0
     }
     
     @IBAction func mul(_ sender: Any) {
@@ -171,6 +180,7 @@ class ViewController: UIViewController {
                 re = 0
             }
         }
+        judge = 0
     }
     
     @IBAction func div(_ sender: Any) {
@@ -195,32 +205,35 @@ class ViewController: UIViewController {
                 re = 0
             }
         }
+        judge = 0
     }
     
     @IBAction func equal(_ sender: Any) {
         let a = Double(result)!
         let b = Double(sum.text!)!
         if number == 1{
-            let c = a + b
+            let c = (( a * 1000000 + b * 1000000 )) / 1000000
             sum.text = String(c)
         }
         if number == 2{
-            let c = a - b
+            let c = (( a * 1000000 - b * 1000000 )) / 1000000
             sum.text = String(c)
         }
         if number == 3{
-            let c = a * b
+            let c = ((a * 1000000) * (b * 1000000)) / 1000000000000
             sum.text = String(c)
         }
         if number == 4{
-            let c = a / b
+            let c = ((a * 1000000) / (b * 1000000))
             sum.text = String(c)
         }
+        judge = 0
     }
     
     @IBAction func clear(_ sender: Any) {
         sum.text = ""
         add = 0
+        judge = 0
     }
     
 
