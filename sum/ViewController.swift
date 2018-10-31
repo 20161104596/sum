@@ -208,6 +208,20 @@ class ViewController: UIViewController {
         judge = 0
     }
     
+    @IBAction func percent(_ sender: Any) {
+        let count = Double(sum.text!)!
+        let count2 = count * 0.01
+        sum.text = String(count2)
+        re = 0
+    }
+    
+    @IBAction func change(_ sender: Any) {
+        let count = Double(sum.text!)!
+        let count2 = -count
+        sum.text = String(count2)
+        re = 0
+    }
+    
     @IBAction func equal(_ sender: Any) {
         let a = Double(result)!
         let b = Double(sum.text!)!
