@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     var result = ""
     var number = 0
-    var re = 0
+    var re = 1
     var add = 0
     var judge = 0
     
@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBAction func n1(_ sender: Any) {
         if re == 1{
             sum.text = "1"
+            re = 0
         }else{
             sum.text = sum.text! + "1"
         }
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
     @IBAction func n2(_ sender: Any) {
         if re == 1{
             sum.text = "2"
+            re = 0
         }else{
             sum.text = sum.text! + "2"
         }
@@ -36,6 +38,7 @@ class ViewController: UIViewController {
     @IBAction func n3(_ sender: Any) {
         if re == 1{
             sum.text = "3"
+            re = 0
         }else{
             sum.text = sum.text! + "3"
         }
@@ -44,6 +47,7 @@ class ViewController: UIViewController {
     @IBAction func n4(_ sender: Any) {
         if re == 1{
             sum.text = "4"
+            re = 0
         }else{
             sum.text = sum.text! + "4"
         }
@@ -52,6 +56,7 @@ class ViewController: UIViewController {
     @IBAction func n5(_ sender: Any) {
         if re == 1{
             sum.text = "5"
+            re = 0
         }else{
             sum.text = sum.text! + "5"
         }
@@ -60,6 +65,7 @@ class ViewController: UIViewController {
     @IBAction func n6(_ sender: Any) {
         if re == 1{
             sum.text = "6"
+            re = 0
         }else{
             sum.text = sum.text! + "6"
         }
@@ -68,6 +74,7 @@ class ViewController: UIViewController {
     @IBAction func n7(_ sender: Any) {
         if re == 1{
             sum.text = "7"
+            re = 0
         }else{
             sum.text = sum.text! + "7"
         }
@@ -76,6 +83,7 @@ class ViewController: UIViewController {
     @IBAction func n8(_ sender: Any) {
         if re == 1{
             sum.text = "8"
+            re = 0
         }else{
             sum.text = sum.text! + "8"
         }
@@ -85,6 +93,7 @@ class ViewController: UIViewController {
     @IBAction func n9(_ sender: Any) {
         if re == 1{
             sum.text = "9"
+            re = 0
         }else{
             sum.text = sum.text! + "9"
         }
@@ -93,6 +102,7 @@ class ViewController: UIViewController {
     @IBAction func n0(_ sender: Any) {
         if re == 1{
             sum.text = "0"
+            re = 0
         }else{
             sum.text = sum.text! + "0"
         }
@@ -225,23 +235,36 @@ class ViewController: UIViewController {
     @IBAction func equal(_ sender: Any) {
         let a = Double(result)!
         let b = Double(sum.text!)!
+        var c = 0.0
         if number == 1{
-            let c = (( a * 1000000 + b * 1000000 )) / 1000000
+            c = (( a * 1000000 + b * 1000000 )) / 1000000
             sum.text = String(c)
         }
         if number == 2{
-            let c = (( a * 1000000 - b * 1000000 )) / 1000000
+            c = (( a * 1000000 - b * 1000000 )) / 1000000
             sum.text = String(c)
         }
         if number == 3{
-            let c = ((a * 1000000) * (b * 1000000)) / 1000000000000
+            c = ((a * 1000000) * (b * 1000000)) / 1000000000000
             sum.text = String(c)
         }
         if number == 4{
-            let c = ((a * 1000000) / (b * 1000000))
+            c = ((a * 1000000) / (b * 1000000))
             sum.text = String(c)
         }
+        sum.text = String(c)
+        var wyb:String = sum.text!
+        while wyb.last == "0"{
+            wyb.removeLast()
+            print(wyb)
+        }
+        while wyb.last == "."{
+            wyb.removeLast()
+            print(wyb)
+        }
+        sum.text = wyb
         judge = 0
+        re = 1
     }
     
     @IBAction func clear(_ sender: Any) {
