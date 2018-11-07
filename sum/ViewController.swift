@@ -108,12 +108,21 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func dot(_ sender: Any) {
+        if re == 1{
+            sum.text = "0."
+            re = 0
+        }
         if judge == 1{
-             sum.text = sum.text!
+            sum.text = sum.text
         }
         else{
-             sum.text = sum.text! + "."
-            judge = 1
+            if sum.text == ""{
+                sum.text = "0."
+            }
+            else{
+                sum.text = sum.text! + "."
+                judge = 1
+            }
         }
     }
     
@@ -123,20 +132,20 @@ class ViewController: UIViewController {
             let b = Double(sum.text!)!
             let c = a + b
             result = String(c)
-            sum.text = ""
+            sum.text = result
             number = 1
-            re = 0
+            re = 1
         }
         else{
             if sum.text == ""{
                 sum.text = ""
             }else{
                 add = 1
-                let x = Double(sum.text!)!
+                let x = sum.text!
                 result = String(x)
-                sum.text = ""
+                sum.text = result
                 number = 1
-                re = 0
+                re = 1
             }
         }
         judge = 0
@@ -149,20 +158,20 @@ class ViewController: UIViewController {
             let b = Double(sum.text!)!
             let c = a - b
             result = String(c)
-            sum.text = ""
+            sum.text = result
             number = 2
-            re = 0
+            re = 1
         }
         else{
             if sum.text == ""{
                 sum.text = ""
             }else{
                 add = 1
-                let x = Double(sum.text!)!
+                let x = sum.text!
                 result = String(x)
-                sum.text = ""
+                sum.text = result
                 number = 2
-                re = 0
+                re = 1
             }
         }
         judge = 0
@@ -174,20 +183,20 @@ class ViewController: UIViewController {
             let b = Double(sum.text!)!
             let c = a * b
             result = String(c)
-            sum.text = ""
+            sum.text = result
             number = 3
-            re = 0
+            re = 1
         }
         else{
             if sum.text == ""{
                 sum.text = ""
             }else{
                 add = 1
-                let x = Double(sum.text!)!
+                let x = sum.text!
                 result = String(x)
-                sum.text = ""
+                sum.text = result
                 number = 3
-                re = 0
+                re = 1
             }
         }
         judge = 0
@@ -199,20 +208,20 @@ class ViewController: UIViewController {
             let b = Double(sum.text!)!
             let c = a / b
             result = String(c)
-            sum.text = ""
+            sum.text = result
             number = 4
-            re = 0
+            re = 1
         }
         else{
             if sum.text == ""{
                 sum.text = ""
             }else{
                 add = 1
-                let x = Double(sum.text!)!
+                let x = sum.text!
                 result = String(x)
-                sum.text = ""
+                sum.text = result
                 number = 4
-                re = 0
+                re = 1
             }
         }
         judge = 0
