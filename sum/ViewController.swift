@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     var number = 0
     var re = 1
     var add = 0
+    var sub = 0
+    var mul = 0
+    var div = 0
     var judge = 0
     
     @IBOutlet weak var sum: UITextField!
@@ -143,6 +146,7 @@ class ViewController: UIViewController {
                 add = 1
                 let x = sum.text!
                 result = String(x)
+                
                 sum.text = result
                 number = 1
                 re = 1
@@ -153,7 +157,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func sub(_ sender: Any) {
-        if add == 1{
+        if sub == 1{
             let a = Double(result)!
             let b = Double(sum.text!)!
             let c = a - b
@@ -178,7 +182,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func mul(_ sender: Any) {
-        if add == 1{
+        if mul == 1{
             let a = Double(result)!
             let b = Double(sum.text!)!
             let c = a * b
@@ -203,7 +207,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func div(_ sender: Any) {
-        if add == 1{
+        if div == 1{
             let a = Double(result)!
             let b = Double(sum.text!)!
             let c = a / b
@@ -273,12 +277,19 @@ class ViewController: UIViewController {
         }
         sum.text = wyb
         judge = 0
+        add = 0
+        sub = 0
+        mul = 0
+        div = 0
         re = 1
     }
     
     @IBAction func clear(_ sender: Any) {
         sum.text = ""
         add = 0
+        sub = 0
+        mul = 0
+        div = 0
         judge = 0
     }
     
@@ -292,4 +303,3 @@ class ViewController: UIViewController {
 
 
 }
-
