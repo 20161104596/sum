@@ -246,46 +246,53 @@ class ViewController: UIViewController {
     }
     
     @IBAction func equal(_ sender: Any) {
-        let a = Double(result)!
-        let b = Double(sum.text!)!
-        var c = 0.0
-        if number == 1{
-            c = (( a * 1000000 + b * 1000000 )) / 1000000
+        if sum.text == "0"{
+            sum.text = "0"
+        }
+        else{
+            let a = Double(result)!
+            let b = Double(sum.text!)!
+            var c = 0.0
+            if number == 1{
+                c = (( a * 1000000 + b * 1000000 )) / 1000000
+                sum.text = String(c)
+            }
+            if number == 2{
+                c = (( a * 1000000 - b * 1000000 )) / 1000000
+                sum.text = String(c)
+            }
+            if number == 3{
+                c = ((a * 1000000) * (b * 1000000)) / 1000000000000
+                sum.text = String(c)
+            }
+            if number == 4{
+                c = ((a * 1000000) / (b * 1000000))
+                sum.text = String(c)
+            }
             sum.text = String(c)
+            var wyb:String = sum.text!
+            while wyb.last == "0"{
+                wyb.removeLast()
+                print(wyb)
+            }
+            while wyb.last == "."{
+                wyb.removeLast()
+                print(wyb)
+            }
+            sum.text = wyb
+            judge = 0
+            add = 0
+            sub = 0
+            mul = 0
+            div = 0
+            re = 1
         }
-        if number == 2{
-            c = (( a * 1000000 - b * 1000000 )) / 1000000
-            sum.text = String(c)
-        }
-        if number == 3{
-            c = ((a * 1000000) * (b * 1000000)) / 1000000000000
-            sum.text = String(c)
-        }
-        if number == 4{
-            c = ((a * 1000000) / (b * 1000000))
-            sum.text = String(c)
-        }
-        sum.text = String(c)
-        var wyb:String = sum.text!
-        while wyb.last == "0"{
-            wyb.removeLast()
-            print(wyb)
-        }
-        while wyb.last == "."{
-            wyb.removeLast()
-            print(wyb)
-        }
-        sum.text = wyb
-        judge = 0
-        add = 0
-        sub = 0
-        mul = 0
-        div = 0
-        re = 1
     }
-    
     @IBAction func clear(_ sender: Any) {
-        sum.text = ""
+        if sum.text == "0"{
+            sum.text = "0"
+        }
+        sum.text = "0"
         add = 0
         sub = 0
         mul = 0
