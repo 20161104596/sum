@@ -289,9 +289,6 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func clear(_ sender: Any) {
-        if sum.text == "0"{
-            sum.text = "0"
-        }
         sum.text = "0"
         add = 0
         sub = 0
