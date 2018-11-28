@@ -113,6 +113,7 @@ class ViewController: UIViewController {
     @IBAction func dot(_ sender: Any) {
         if re == 1{
             sum.text = "0."
+            judge = 1
             re = 0
         }
         if judge == 1{
@@ -121,6 +122,7 @@ class ViewController: UIViewController {
         else{
             if sum.text == ""{
                 sum.text = "0."
+                judge = 1
             }
             else{
                 sum.text = sum.text! + "."
