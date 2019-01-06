@@ -135,9 +135,36 @@ class ViewController: UIViewController {
         if add == 1{
             let a = Double(result)!
             let b = Double(sum.text!)!
-            let c = a + b
+            var c = 0.0
+            if number == 1{
+                c = (( a * 1000000 + b * 1000000 )) / 1000000
+                sum.text = String(c)
+            }
+            if number == 2{
+                c = (( a * 1000000 - b * 1000000 )) / 1000000
+                sum.text = String(c)
+            }
+            if number == 3{
+                c = ((a * 1000000) * (b * 1000000)) / 1000000000000
+                sum.text = String(c)
+            }
+            if number == 4{
+                c = ((a * 1000000) / (b * 1000000))
+                sum.text = String(c)
+            }
             result = String(c)
-            sum.text = result
+            sum.text = String(c)
+            var wyb:String = sum.text!
+            while wyb.last == "0"{
+                wyb.removeLast()
+                print(wyb)
+            }
+            while wyb.last == "."{
+                wyb.removeLast()
+                print(wyb)
+            }
+            sum.text = wyb
+            
             number = 1
             re = 1
         }
@@ -159,12 +186,38 @@ class ViewController: UIViewController {
     
     
     @IBAction func sub(_ sender: Any) {
-        if sub == 1{
+        if add == 1{
             let a = Double(result)!
             let b = Double(sum.text!)!
-            let c = a - b
+            var c = 0.0
+            if number == 1{
+                c = (( a * 1000000 + b * 1000000 )) / 1000000
+                sum.text = String(c)
+            }
+            if number == 2{
+                c = (( a * 1000000 - b * 1000000 )) / 1000000
+                sum.text = String(c)
+            }
+            if number == 3{
+                c = ((a * 1000000) * (b * 1000000)) / 1000000000000
+                sum.text = String(c)
+            }
+            if number == 4{
+                c = ((a * 1000000) / (b * 1000000))
+                sum.text = String(c)
+            }
             result = String(c)
-            sum.text = result
+            sum.text = String(c)
+            var wyb:String = sum.text!
+            while wyb.last == "0"{
+                wyb.removeLast()
+                print(wyb)
+            }
+            while wyb.last == "."{
+                wyb.removeLast()
+                print(wyb)
+            }
+            sum.text = wyb
             number = 2
             re = 1
         }
@@ -184,12 +237,38 @@ class ViewController: UIViewController {
     }
     
     @IBAction func mul(_ sender: Any) {
-        if mul == 1{
+        if add == 1{
             let a = Double(result)!
             let b = Double(sum.text!)!
-            let c = a * b
+            var c = 0.0
+            if number == 1{
+                c = (( a * 1000000 + b * 1000000 )) / 1000000
+                sum.text = String(c)
+            }
+            if number == 2{
+                c = (( a * 1000000 - b * 1000000 )) / 1000000
+                sum.text = String(c)
+            }
+            if number == 3{
+                c = ((a * 1000000) * (b * 1000000)) / 1000000000000
+                sum.text = String(c)
+            }
+            if number == 4{
+                c = ((a * 1000000) / (b * 1000000))
+                sum.text = String(c)
+            }
             result = String(c)
-            sum.text = result
+            sum.text = String(c)
+            var wyb:String = sum.text!
+            while wyb.last == "0"{
+                wyb.removeLast()
+                print(wyb)
+            }
+            while wyb.last == "."{
+                wyb.removeLast()
+                print(wyb)
+            }
+            sum.text = wyb
             number = 3
             re = 1
         }
@@ -209,12 +288,39 @@ class ViewController: UIViewController {
     }
     
     @IBAction func div(_ sender: Any) {
-        if div == 1{
+        if add == 1{
             let a = Double(result)!
             let b = Double(sum.text!)!
-            let c = a / b
+            var c = 0.0
+            if number == 1{
+                c = (( a * 1000000 + b * 1000000 )) / 1000000
+                sum.text = String(c)
+            }
+            if number == 2{
+                c = (( a * 1000000 - b * 1000000 )) / 1000000
+                sum.text = String(c)
+            }
+            if number == 3{
+                c = ((a * 1000000) * (b * 1000000)) / 1000000000000
+                sum.text = String(c)
+            }
+            if number == 4{
+                c = ((a * 1000000) / (b * 1000000))
+                sum.text = String(c)
+            }
             result = String(c)
-            sum.text = result
+            sum.text = String(c)
+            var wyb:String = sum.text!
+            while wyb.last == "0"{
+                wyb.removeLast()
+                print(wyb)
+            }
+            while wyb.last == "."{
+                wyb.removeLast()
+                print(wyb)
+            }
+            sum.text = wyb
+            
             number = 4
             re = 1
         }
@@ -284,18 +390,12 @@ class ViewController: UIViewController {
             sum.text = wyb
             judge = 0
             add = 0
-            sub = 0
-            mul = 0
-            div = 0
             re = 1
         }
     }
     @IBAction func clear(_ sender: Any) {
-        sum.text = "0"
+        sum.text = ""
         add = 0
-        sub = 0
-        mul = 0
-        div = 0
         judge = 0
     }
     
