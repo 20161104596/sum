@@ -13,9 +13,6 @@ class ViewController: UIViewController {
     var number = 0
     var re = 1
     var add = 0
-    var sub = 0
-    var mul = 0
-    var div = 0
     var judge = 0
     
     @IBOutlet weak var sum: UITextField!
